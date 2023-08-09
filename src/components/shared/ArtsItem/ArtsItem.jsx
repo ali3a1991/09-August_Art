@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ArtsItem.scss'
 import { Link, useLocation } from 'react-router-dom'
-import altImage from '../../../assets/image/sorry.jpg'
+import altImage from '../../../assets/image/sorry.png'
 
 function ArtsItem(props) {
   const location = useLocation().pathname;
@@ -14,11 +14,17 @@ function ArtsItem(props) {
 
   return (
     <li className='arts-item'>
-      <Link to={`/arts/${props.id}`}>
-        <div className='frame'>
+      <Link to={'/arts'} className='back-btn'>Back</Link>
+      {location !== '/arts' ? (
+        <div className='frame image-width'>
           <img src={props.imageId ? imageUrl : altImage} onError={imageAlternative}/>
         </div>
-      </Link>
+        ) : 
+        <Link to={`/arts/${props.id}`}>
+          <div className='frame'>
+            <img src={props.imageId ? imageUrl : altImage} onError={imageAlternative}/>
+          </div>
+        </Link>}
       <div className="art-item-title">
         <h1>{props.title}</h1>
         <h2>Artist: <span>{props.artist}</span></h2>

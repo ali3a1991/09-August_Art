@@ -10,6 +10,25 @@
     max-height:100%;
     max-width:100%;
   }
+
+}
+
+.back-btn{
+  color: black;
+  display: inline-block;
+  position: absolute;
+  text-decoration: none;
+  background-color: rgb(255, 175, 71);
+  width: 80px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+
+  &:hover{
+    transform: scale(1.2);
+  }
 }
 
 .frame {
@@ -28,7 +47,7 @@
   padding:3vmin;
   position:relative;
   text-align:center;
-  height: 70vh;
+  height: 65vh;
 
   &:before {
     border-radius:2px;
@@ -80,4 +99,9 @@
       color: black;
     }
   }
+}
+
+.image-width{
+  width: 50vw;
+  margin-inline: auto;
 }
