@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 import Home from './components/pages/Home/Home'
-import ArtsList from './components/pages/Artslist/ArtsLIst'
+import ArtsList from './components/pages/Artslist/ArtsList'
 import ArtsDetails from './components/pages/ArtsDetails/ArtsDetails'
 
 function App() {
