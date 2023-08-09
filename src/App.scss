@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Libre+Baskerville&family=Roboto+Slab&family=Roboto:wght@100&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url('./assets/image/background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 80px 20px;
+  font-family: 'Libre Baskerville', serif;
+}

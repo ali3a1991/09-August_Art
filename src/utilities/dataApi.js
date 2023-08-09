@@ -1,0 +1,1 @@
+export const dataApi = "https://api.artic.edu/api/v1/artworks"
