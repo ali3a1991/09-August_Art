@@ -3,3 +3,31 @@
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   gap: 50px;
 }
+
+.btn{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  p{
+    margin-inline: 10px;
+    background-color: white;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%
+  }
+
+  button{
+    width: 100px;
+    line-height: 30px;
+  }
+
+  select{
+    width: 50px;
+    height: 33px;
+  }
+
+  label{
+    margin-inline: 15px 5px;
+  }
+}

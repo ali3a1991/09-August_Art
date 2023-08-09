@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ArtsItem.scss'
 import { Link, useLocation } from 'react-router-dom'
+import altImage from '../../../assets/image/sorry.jpg'
 
 function ArtsItem(props) {
   const location = useLocation().pathname;
-  console.log(location)
+  const [imageUrl, setImageUrl] = useState(`https://www.artic.edu/iiif/2/${props.imageId}/full/400,/0/default.jpg`)
+
+  const imageAlternative = () => {
+    setImageUrl(altImage)
+  }
+
 
   return (
     <li className='arts-item'>
       <Link to={`/arts/${props.id}`}>
         <div className='frame'>
-          <img src={`https://www.artic.edu/iiif/2/${props.imageId}/full/843,/0/default.jpg`} alt={props.title} />
+          <img src={props.imageId ? imageUrl : altImage} onError={imageAlternative}/>
         </div>
       </Link>
       <div className="art-item-title">

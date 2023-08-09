@@ -4,18 +4,23 @@ import { dataApi } from '../../../utilities/dataApi'
 import { useParams } from 'react-router-dom'
 import ArtsItem from '../../shared/ArtsItem/ArtsItem';
 
-function ArtsDetails() {
+function ArtsDetails(props) {
   const artId = useParams().id;
-  const [art, setArt] = useState({})
+  const [art, setArt] = useState({});
+  const [isLaoding, setIsLaoding] = useState(true);
 
   useEffect(() => {
-    fetch(dataApi)
+    fetch(`${dataApi}/${artId}`)
       .then(res => res.json())
       .then(dataList => {
-        const data = dataList.data.find(artItem => artItem.id === Number(artId));
-        setArt(data);
+        setArt(dataList.data);
+        setIsLaoding(false);
       })
-  }, [])
+    }, [])
+
+  if (isLaoding) {
+    return <p>Laoding...</p>
+  }
 
   return (
     <div>
